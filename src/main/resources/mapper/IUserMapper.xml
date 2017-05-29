@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.iems.mapper.IUserMapper">
+
+    <resultMap id="BaseUser" type="com.iems.entity.User">
+        <result column="id" property="id" javaType="java.lang.Integer"/>
+        <result column="phone" property="phone" javaType="java.lang.String"/>
+        <result column="pwd" property="pwd" javaType="java.lang.String"/>
+        <result column="departmentId" property="departmentId" javaType="java.lang.Integer"/>
+        <result column="gender" property="gender" javaType="java.lang.Integer"/>
+        <result column="realName" property="realName" javaType="java.lang.String"/>
+        <result column="job" property="job" javaType="java.lang.String"/>
+        <result column="avatar" property="avatar" javaType="java.lang.String"/>
+        <result column="status" property="status" javaType="java.lang.Integer"/>
+        <result column="entryDate" property="entryDate" javaType="java.util.Date"/>
+        <result column="createTime" property="createTime" javaType="java.util.Date"/>
+        <result column="lastLogin" property="lastLogin" javaType="java.util.Date"/>
+    </resultMap>
+
+
+    <select id="queryUserByAccount" resultMap="BaseUser">
+        SELECT  * FROM  `users` WHERE `phone`=#{account}
+    </select>
+
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="user.id" parameterType="com.iems.entity.User">
+        INSERT INTO `users`
+        (`phone`,`pwd`,`departmentId`,`gender`,`realName`,`job`,`avatar`,`status`,`entryDate`,
+        `createTime`,`lastLogin`)
+        VALUES
+        (#{phone},#{pwd},#{departmentId},#{gender},#{realName},#{job},#{avatar},#{status},
+        #{entryDate},NOW(),NOW())
+    </insert>
+
+
+    <update id="updateUser">
+        UPDATE `users`
+        <set>
+            <if test="user.lastLogin != null">
+                `lastLogin`=#{user.lastLogin},
+            </if>
+            <if test="user.entryDate != null">
+                `entryDate`=#{user.entryDate},
+            </if>
+            <if test="user.status != null">
+                `status`=#{user.status},
+            </if>
+            <if test="user.avatar != null">
+                `avatar`=#{user.avatar},
+            </if>
+            <if test="user.job != null">
+                `job`=#{user.job},
+            </if>
+            <if test="user.realName != null">
+                `realName`=#{user.realName},
+            </if>
+            <if test="user.gender != null">
+                `gender`=#{user.gender},
+            </if>
+            <if test="user.departmentId != null">
+                `departmentId`=#{user.departmentId},
+            </if>
+            <if test="user.pwd != null">
+                `pwd`=#{user.pwd},
+            </if>
+        </set>
+        WHERE `id`=#{user.id}
+    </update>
+
+
+</mapper>

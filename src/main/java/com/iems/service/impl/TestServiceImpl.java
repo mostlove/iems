@@ -1,6 +1,5 @@
 package com.iems.service.impl;
 
-import com.iems.service.ITestService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -8,6 +7,6 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class TestServiceImpl implements ITestService {
+public class TestServiceImpl {
     
 }

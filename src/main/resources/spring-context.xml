@@ -72,7 +72,8 @@
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="typeAliasesPackage" value="com.iems.beans" />
+        <property name="typeAliasesPackage" value="com.iems.entity" />
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
     </bean>
 
     <!-- 自动扫描和注册Mapper接口 basePackage是用来指定Mapper接口文件所在的基包， 在这个基包或其所有子包下面的Mapper接口都将被搜索到。
@@ -81,6 +82,8 @@
         <property name="basePackage" value="com.iems.mapper" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
+
+
 
 
 

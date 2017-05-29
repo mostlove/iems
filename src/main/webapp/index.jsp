@@ -1,5 +1,9 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <body>
-<h2>Hello World!</h2>
+    <title>正在跳转...</title>
+<script>
+    window.location="<%=request.getContextPath()%>/login";
+</script>
 </body>
 </html>
