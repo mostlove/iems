@@ -15,6 +15,8 @@ public class LoginHelper {
 
 	public static boolean isLogin=false;
 
+	public static final String LOGIN_PAGE = "/login";
+
 	/**SESSION USER*/
 	public static final String SESSION_USER = "admin_user";
 	

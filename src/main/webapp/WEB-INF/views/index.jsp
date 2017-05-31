@@ -15,7 +15,7 @@
         <div class="layui-main">
             <div class="admin-login-box">
                 <a class="logo" style="left: 0;" href="<%=request.getContextPath()%>/page/index">
-                    <span style="font-size: 22px;">EREAL</span>
+                    <span style="font-size: 22px;">IEMS</span>
                 </a>
                 <div class="admin-side-toggle">
                     <i class="fa fa-bars" aria-hidden="true"></i>
@@ -30,15 +30,11 @@
                         刷新
                     </a>
                 </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:cleanOut()">
-                        清除浏览器缓存
-                    </a>
-                </li>
+
                 <li class="layui-nav-item">
                     <a href="javascript:;" class="admin-header-user">
                         <img src="<%=request.getContextPath()%>/resources/img/0.jpg" />
-                        <span id="userName">beginner</span>
+                        <span id="userName">${user.realName}</span>
                     </a>
                     <dl class="layui-nav-child">
                         <dd>

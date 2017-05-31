@@ -1,13 +1,15 @@
-<!-- 解决layer.open 不居中问题   -->
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String base = request.getContextPath();
+%>
 <html>
 <head>
     <meta charset="utf-8">
     <title>IEMS登录</title>
     <!--引入抽取css文件-->
     <%@include file="common/public-css.jsp" %>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/login.css" media="all">
+    <link rel="stylesheet" type="text/css" href="<%=base%>/resources/css/login.css" media="all">
 </head>
 <body>
 <div class="layui-canvs"></div>
@@ -91,7 +93,7 @@
                 password : $.md5($("#password").val()),
             },
             success : function (data) {
-                if (data.flag == 0 && data.code == 200) {
+                if (data.code == 200) {
                     localStorage.setItem("userInfo", JSON.stringify(data.data));
                     location.href = "<%=request.getContextPath()%>/page/index";
                 }

@@ -24,11 +24,6 @@
                 <div class="layui-field-box">
                 </div>
             </fieldset>
-            <fieldset class="layui-elem-field layui-field-title">
-                <legend>版本号:# v2.0 2017-05-20</legend>
-                <div class="layui-field-box">
-                </div>
-            </fieldset>
         </div>
     </fieldset>
 </div>

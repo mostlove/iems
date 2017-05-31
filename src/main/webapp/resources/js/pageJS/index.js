@@ -135,9 +135,9 @@ var navs = [{
         "href": YZ.ip + "/page/project/projectExternal/list"
     }]
 }, {
-    "title": "快捷百度一下",
+    "title": "广汉生活圈",
     "icon": "fa-search",
-    "href": "https://www.baidu.com",
+    "href": "http://www.0838live.com",
     "spread": false
 }];
 

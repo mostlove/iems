@@ -59,4 +59,10 @@ public class UserController extends BaseController {
         return buildSuccessCodeJson(StatusConstant.SUCCESS_CODE,"登录成功");
     }
 
+    @RequestMapping("/logout")
+    public @ResponseBody ViewData logout(){
+        LoginHelper.clearToken();
+        return buildFailureJson(StatusConstant.SUCCESS_CODE,"注销成功");
+    }
+
 }
